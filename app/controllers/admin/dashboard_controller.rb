@@ -1,6 +1,8 @@
 class Admin::DashboardController < ApplicationController
   before_action :authenticate_admin
   def show
+    @product_count = Product.count
+    @category_count = Category.count
   end
 
   def authenticate_admin
